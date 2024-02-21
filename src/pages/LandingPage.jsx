@@ -25,7 +25,10 @@ function LandingPage() {
 
   console.log(JSON.stringify(config, null, 4));
 
-  config.oidc.redirectUri = `http://localhost:8000/region/${region}/login/callback`;
+  const redirect_origin = process.env.DOMAIN;
+  console.log("DOMAIN", redirect_origin);
+
+  config.oidc.redirectUri = `${redirect_origin}/region/${region}/login/callback`;
 
   const oktaAuth = new OktaAuth(config.oidc);
 

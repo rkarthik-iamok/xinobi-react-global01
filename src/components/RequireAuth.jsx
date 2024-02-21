@@ -17,6 +17,7 @@ const RequireAuth = () => {
         window.location.href,
         window.location.origin
       );
+      console.log(originalUri);
       oktaAuth.setOriginalUri(originalUri);
       oktaAuth.signInWithRedirect();
     }

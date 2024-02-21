@@ -12,8 +12,8 @@ function Home({ region }) {
   const loginToUSSpoke = () => {
     console.log("Spoke button has been clicked");
     window.location.href =
-      "https://primary.karthiktc.com/app/okta_org2org/exkak0ns6bGy2vMz6697/sso/saml?RelayState=https://xinobi-iamok-global.netlify.app/region/us/profile";
-    // "https://primary.karthiktc.com/home/bookmark/0oabph5jhiPoI83ib697/2557";
+      //   "https://primary.karthiktc.com/app/okta_org2org/exkak0ns6bGy2vMz6697/sso/saml?RelayState=https://xinobi-iamok-global.netlify.app/region/us/profile";
+      "https://primary.karthiktc.com/home/bookmark/0oabph5jhiPoI83ib697/2557";
   };
 
   useEffect(() => {
