@@ -58,7 +58,10 @@ function Home({ region }) {
         <div>
           <p>Welcome to Okta Application</p>
           {region == "us" && (
-            <button onClick={loginToUSSpoke}>US Spoke Login</button>
+            <>
+              <button onClick={loginToUSSpoke}>US Spoke Login</button>
+              <button onClick={signUpToUSSpoke}>US Spoke Signup</button>
+            </>
           )}
           {region != "us" && <button onClick={login}>Login</button>}
         </div>
