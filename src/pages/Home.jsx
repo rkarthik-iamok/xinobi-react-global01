@@ -12,8 +12,15 @@ function Home({ region }) {
   const loginToUSSpoke = () => {
     console.log("Spoke button has been clicked");
     window.location.href =
-      //   "https://primary.karthiktc.com/app/okta_org2org/exkak0ns6bGy2vMz6697/sso/saml?RelayState=https://xinobi-iamok-global.netlify.app/region/us/profile";
-      "https://primary.karthiktc.com/home/bookmark/0oabph5jhiPoI83ib697/2557";
+      "https://ciam-spoke02.karthiktc.com/home/bookmark/0oac807bl27xttAw4697/2557";
+    //   "https://primary.karthiktc.com/app/okta_org2org/exkak0ns6bGy2vMz6697/sso/saml?RelayState=https://xinobi-iamok-global.netlify.app/region/us/profile";
+    // "https://primary.karthiktc.com/home/bookmark/0oabph5jhiPoI83ib697/2557";
+  };
+
+  const signUpToUSSpoke = () => {
+    console.log("Spoke Sign Up button has been clicked");
+    window.location.href =
+      "https://ciam-spoke02.karthiktc.com/app/bookmark/0oac807bl27xttAw4697/login?signup_page=true";
   };
 
   useEffect(() => {
