@@ -10,7 +10,7 @@ import { LoginCallback, Security } from "@okta/okta-react";
 import InvalidRegion from "./InvalidRegion";
 import config from "../config";
 import Home from "./Home";
-import RequireAuth from "../components/RequireAuth";
+import { RequireAuth, RequireAuthWithRegion } from "../components/RequireAuth";
 import Profile from "./Profile";
 
 function LandingPage() {
@@ -43,7 +43,10 @@ function LandingPage() {
         <Routes>
           <Route path="/home" element={<Home region={region} />} />
 
-          <Route path="/profile" element={<RequireAuth />}>
+          <Route
+            path="/profile"
+            element={<RequireAuthWithRegion region={region} />}
+          >
             <Route path="" element={<Profile />} />
           </Route>
           <Route path="/login/callback" element={<LoginCallback />} />

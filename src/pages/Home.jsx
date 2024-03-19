@@ -9,11 +9,18 @@ function Home({ region }) {
   const login = async () => await oktaAuth.signInWithRedirect();
   const logout = async () => await oktaAuth.signOut("/");
 
+  const loginToEUSpoke = async () => {
+    console.log("EU Spoke has been clicked");
+    window.location.href =
+      "https://ciam-spoke01.karthiktc.com/home/bookmark/0oacgs4frbSQZ5zQZ697/2557";
+  };
+
   const loginToUSSpoke = () => {
     console.log("Spoke button has been clicked");
     window.location.href =
-      "https://ciam-spoke02.karthiktc.com/home/bookmark/0oac807bl27xttAw4697/2557";
-    //   "https://primary.karthiktc.com/app/okta_org2org/exkak0ns6bGy2vMz6697/sso/saml?RelayState=https://xinobi-iamok-global.netlify.app/region/us/profile";
+      "https://ciam-spoke02.karthiktc.com/app/okta_org2org/exkc28xmjiQhNIE8T697/sso/saml?RelayState=http://localhost:8000/region/us/profile";
+    // "https://ciam-spoke02.karthiktc.com/home/bookmark/0oac807bl27xttAw4697/2557";
+    // "https://primary.karthiktc.com/app/okta_org2org/exkak0ns6bGy2vMz6697/sso/saml?RelayState=https://xinobi-iamok-global.netlify.app/region/us/profile";
     // "https://primary.karthiktc.com/home/bookmark/0oabph5jhiPoI83ib697/2557";
   };
 
@@ -60,10 +67,12 @@ function Home({ region }) {
           {region == "us" && (
             <>
               <button onClick={loginToUSSpoke}>US Spoke Login</button>
-              <button onClick={signUpToUSSpoke}>US Spoke Signup</button>
+              {/* <button onClick={signUpToUSSpoke}>US Spoke Signup</button> */}
             </>
           )}
-          {region != "us" && <button onClick={login}>Login</button>}
+          {region == "eu" && <button onClick={loginToEUSpoke}>Login</button>}
+          {/* {region == "eu" && <button onClick={login}>Login</button>} */}
+          {/* {region == "apac" && <button onClick={login}>Login</button>} */}
         </div>
       )}
     </div>
